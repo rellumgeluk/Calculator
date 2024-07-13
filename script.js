@@ -21,5 +21,6 @@ const multiply = function (array) {
 };
 
 const divide = function (array) {
+    if (array.length === 0) throw new Error ("Array cannot be empty")
     return array.reduce((product, value) => product / value);
 };
