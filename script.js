@@ -24,3 +24,18 @@ const divide = function (array) {
     if (array.length === 0) throw new Error ("Array cannot be empty")
     return array.reduce((product, value) => product / value);
 };
+
+const operate = function (operator, a, b) {
+    switch (operator) {
+        case '+':
+            return add(a,b);
+        case '-':
+            return subtract(a,);
+        case '*':
+            return multiply([a,b]);
+        case '/':
+            return divide([a,b]);
+        default:
+            return "Invalid operator";
+    }
+};
