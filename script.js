@@ -30,7 +30,7 @@ const operate = function (operator, a, b) {
         case '+':
             return add(a,b);
         case '-':
-            return subtract(a,);
+            return subtract(a,b);
         case '*':
             return multiply([a,b]);
         case '/':
@@ -39,3 +39,8 @@ const operate = function (operator, a, b) {
             return "Invalid operator";
     }
 };
+
+console.log(operate('+', 42,2));
+console.log(operate('-', 60, 5));
+console.log(operate('*', 7, 11));
+console.log(operate('/', 176, 2));
