@@ -6,3 +6,39 @@ body {
     background-color: #f0f0f0;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.calculator {
+    display: grid;
+    grid-template-rows: auto 50px;
+    grid-template-columns: 73px 73px 73px 73px;
+    gap: 2px;
+    width: 300px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: greenyellow;
+}
+
+.display {
+    grid-column: span 4;
+    background-color: honeydew;
+    color:black;
+    text-align: right;
+    padding: 20px;
+    font-size: 30px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+button {
+    background-color: greenyellow;
+    border: none;
+    color: black;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 20px;
+    outline: none;
+}
+
+button:hover {
+    background-color: gray;
+}
