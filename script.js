@@ -74,3 +74,37 @@ const chooseOperator = (operator) => {
     currentOperator = operator;
     shouldResetScreen = true;
 };
+
+const calculate = () => {
+    let result;
+    const prev = parseFloat(previousInput);
+    const current = parseFloat(currentInput);
+
+    if (isNaN(prev) || isNaN(current)) return;
+
+    switch (currentOperator) {
+        case '+':
+            result = prev + current;
+            break;
+        case '-':
+            result = prev - current;
+            break;
+        case '*':
+            result = prev * current;
+            break;
+        case '/' :
+            result = prev / current;
+            break;
+        default:
+            return;
+    }
+    currentInput = result.toString();
+    currentOperator = null;
+    shouldResetScreen = true;
+};
+
+document.querySelector('.clear').addEventListener('click', clear);
+document.querySelector('.equals').addEventListener('click', calculate);
+document.querySelectorAll('.number').forEach(button => button.addEventListener('click', (e) => appendNumber(e.target.textContent)));
+document.querySelectorAll('.operator').forEach(button => button.addEventListener('click', (e) => chooseOperator(e.target.textContent)));
+document.querySelector('.number-dot').addEventListener('click', multiply);
