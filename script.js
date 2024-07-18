@@ -63,8 +63,8 @@ const calculate = () => {
 document.querySelector('.clear').addEventListener('click', clear);
 document.querySelector('.equals').addEventListener('click', calculate);
 document.querySelectorAll('.number').forEach(button =>
-    button.addEventListener('click', (e) => addingNumber(e.target.textContent))
+    button.addEventListener('click', (event) => addingNumber(event.target.textContent))
 );
 document.querySelectorAll('.operator').forEach(button =>
-    button.addEventListener('click', (e) => chooseOperator(e.target.textContent))
+    button.addEventListener('click', (event) => chooseOperator(event.target.textContent))
 );
