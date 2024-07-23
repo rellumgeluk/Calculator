@@ -68,3 +68,21 @@ document.querySelectorAll('.number').forEach(button =>
 document.querySelectorAll('.operator').forEach(button =>
     button.addEventListener('click', (event) => chooseOperator(event.target.textContent))
 );
+
+document.addEventListener('keydown', KeyPress);
+
+function KeyPress(event) {
+    const key= event.key;
+
+    if (key >= '0' && key <='9') {
+        addingNumber(key);
+    } else if (key === '.') {
+        addingNumber(key);
+    } else if (key === '+' || key === '-'|| key === '/' || key === '*' ) {
+        chooseOperator(key);
+    } else if (key === 'Enter' || key === '=') {
+        calculate();
+    } else if (key === 'Backspace' || key === 'Delete'){
+        clear();
+    }
+};
